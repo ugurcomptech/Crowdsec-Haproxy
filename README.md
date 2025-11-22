@@ -52,6 +52,8 @@ backend webservers
     server web1 203.0.113.24:80 check send-proxy
 EOF
 ```
+**Not:** *HAProxy yapılandırmasında backend sunucuya yaptığımız yönlendirmede yer alan send-proxy parametresi, isteğin arka uç sunucuya gerçek istemci IP adresiyle iletilmesini sağlar. Eğer bu trafiği bir Nginx’e veya başka bir HAProxy örneğine yönlendiriyorsanız, hedef sunucunun konfigürasyonuna mutlaka accept-proxy eklemeniz gerekir. Bu ayar yapılmazsa backend sunucu, gelen bağlantılarda gerçek istemci IP’sini göremez ve tüm istekler HAProxy’nin kendi IP’sinden geliyormuş gibi görünür.*
+
 
 Konfigürasyonu doğrula:
 ```
