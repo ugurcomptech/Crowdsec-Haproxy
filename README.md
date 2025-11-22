@@ -49,7 +49,7 @@ frontend http-in
 
 backend webservers
     balance roundrobin
-    server web1 203.0.113.24:80 check accept proxy
+    server web1 203.0.113.24:80 check send-proxy
 EOF
 ```
 
